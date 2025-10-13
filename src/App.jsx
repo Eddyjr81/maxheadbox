@@ -164,7 +164,7 @@ function App() {
     if (hasAskedPermissionRef.current) {
       globalAgentChatRef.current.push({
         role: 'user',
-        content: `The user has just replied to your previous request for tool execution consent: "${userInput}"\nBased on the user's last message, you MUST now call the function that was interrupted "${functionRecall.current}" and the following functions (if there were any other after that). You MUST include the correct 'consent' boolean parameter: true if they allowed it, false if they denied it.`
+        content: `The user has just replied to your previous request for tool execution consent: "${userInput}"\nBased on the user's last message, you MUST now call the function that was interrupted "${functionRecall.current}" and the following functions (if there were any other after that). You MUST include the correct 'consent' boolean parameter: true if they allowed it, false if they denied it. REMEMBER to set the consent back to false for the following functions.`
       });
     } else {
       globalAgentChatRef.current = [{
@@ -194,8 +194,6 @@ function App() {
         const toolCallMessage = response.message;
 
         if (hasAskedPermissionRef.current) {
-          console.log('consenting?');
-          console.log(toolCallMessage);
           hasAskedPermissionRef.current = false;
         }
 
@@ -231,7 +229,7 @@ function App() {
         if (dangerous && !hasAskedPermissionRef.current && !consenting) {
           hasAskedPermissionRef.current = true;
 
-          functionRecall.current = `${toolContent.function}(${toolContent.parameter})`;
+          functionRecall.current = `${toolContent.function}("${toolContent.parameter}")`;
 
           cumulativeResult = `Ask the user for permission to execute the tool: ${toolContent.function}(${toolContent.parameter}). The tool you must execute next, if consent is given, is: ${toolContent.function}`;
 
@@ -260,8 +258,6 @@ function App() {
     console.log("Agent: ", globalAgentChatRef.current);
     setShowFace(true);
     setAppStatus(APP_STATUS.THINKING);
-
-    console.log(hasAskedPermissionRef.current);
 
     if (hasAskedPermissionRef.current) {
       processConversation(cumulativeResult, 'system');

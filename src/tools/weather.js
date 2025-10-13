@@ -3,6 +3,7 @@ import config from '../config.js';
 const name = 'get_weather';
 const params = 'city';
 const description = 'return the weather for a certain city.';
+const dangerous = true;
 
 const execution = async (parameter) => {
   const city = parameter;
@@ -20,4 +21,4 @@ const execution = async (parameter) => {
   return `Here is the weather data: ${weather}`;
 };
 
-export default { name, params, description, execution };
+export default { name, params, description, execution, dangerous };
