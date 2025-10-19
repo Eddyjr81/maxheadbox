@@ -273,7 +273,7 @@ function App() {
     setAppStatus(APP_STATUS.THINKING);
 
     if (hasAskedPermissionRef.current) {
-      processConversation(cumulativeResult, 'system');
+      processConversation(cumulativeResult, 'user');
     } else {
       if (toolResult === undefined) {
         setFace('reading');
@@ -379,6 +379,7 @@ function App() {
 
         await spawnListener();
       } else {
+        setShowFace(true);
         setAppStatus('');
         setFace('dead');
         console.error("Error occurred:", error);
