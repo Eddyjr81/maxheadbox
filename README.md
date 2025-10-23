@@ -143,8 +143,6 @@ If you consider certain tools to be dangerous and want additional confirmation b
 
 ## External resources
 
-This project wouldn't be possible without the following open-source projects and resources:
-
 * The voice activation was achieved using [Vosk](https://github.com/alphacep/vosk-api).
 * [faster-whisper](https://github.com/SYSTRAN/faster-whisper): Used for efficient and accurate voice transcription. For a detailed guide on setting it up locally, check out this [this tutorial](https://www.youtube.com/watch?v=3yLFWpKKbe8)!
 * The animated character in the UI was created by slightly modifying Microsoft's beautiful [Fluent Emoji](https://github.com/microsoft/fluentui-emoji) set.
