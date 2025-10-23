@@ -128,7 +128,7 @@ _The tools with the `.txt` extension are provided for reference. If you want to 
 
 ### Dangerous Tools
 
-If you consider certain tools to be dangerous and want additional confirmation before the agent executes them, you can set the property `dangerous: true` when creating a new tool. When the model selects this tool, it will ask for your confirmation before executing it. Simply reply with _YES_ or _NO_. Checkout the demo video with the light bulb to see how this confirmation flow works!
+If you consider certain tools to be dangerous and want additional confirmation before the agent executes them, you can set the property `dangerous: true` when creating a new tool. When the model selects this tool, it will ask for your confirmation before executing it. Simply reply with _YES_ or _NO_. Checkout the [demo video](#demos) with the light bulb to see how this confirmation flow works!
 
 ## Flow Diagram
 
