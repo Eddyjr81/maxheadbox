@@ -7,17 +7,25 @@ GEM
     builder (3.3.0)
     daemons (1.4.1)
     date (3.4.1)
+    domain_name (0.6.20240107)
     dotenv (3.1.8)
     em-websocket (0.3.8)
       addressable (>= 2.1.1)
       eventmachine (>= 0.12.9)
     eventmachine (1.2.7)
+    http-accept (1.7.0)
+    http-cookie (1.1.0)
+      domain_name (~> 0.5)
     logger (1.7.0)
     mail (2.8.1)
       mini_mime (>= 0.1.1)
       net-imap
       net-pop
       net-smtp
+    mime-types (3.7.0)
+      logger
+      mime-types-data (~> 3.2025, >= 3.2025.0507)
+    mime-types-data (3.2025.0924)
     mini_mime (1.1.5)
     mustermann (3.0.4)
       ruby2_keywords (~> 0.0.1)
@@ -30,6 +38,7 @@ GEM
       timeout
     net-smtp (0.5.1)
       net-protocol
+    netrc (0.11.0)
     pony (1.13.1)
       mail (>= 2.0)
     public_suffix (6.0.2)
@@ -38,6 +47,11 @@ GEM
       base64 (>= 0.1.0)
       rack (~> 2.2, >= 2.2.4)
     redcarpet (3.6.1)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     ruby2_keywords (0.0.5)
     sinatra (3.2.0)
       mustermann (~> 3.0)
@@ -65,6 +79,7 @@ DEPENDENCIES
   dotenv
   pony
   redcarpet
+  rest-client
   sinatra (~> 3.2)
   sinatra-websocket
   thin
