@@ -108,14 +108,14 @@ RECORDINGS_DIR="~/Desktop/whisper_recordings"
 To start the Max Headbox agent, run the following command from the root of the project directory:
 
 ```sh
-npm run start-prod
+npm run prod-start
 ```
 
 You should now be able to see the app running on localhost.
 For development instead run:
 
 ```sh
-npm run start-dev
+npm run dev-start
 ```
 
 ## Creating Tools
